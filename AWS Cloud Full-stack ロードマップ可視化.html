@@ -3912,7 +3912,7 @@ async function render(canvas,keepView=false){
   catch(error){window.canvasPreview.errors.push(String(error));}
  }
  document.getElementById('status').textContent=canvas.nodes.length+' nodes / '+canvas.edges.length+' edges';
- if(!keepView)core();else transform();window.canvasPreview.ready=true;
+ if(!keepView)fit();else transform();window.canvasPreview.ready=true;
 }
 viewport.addEventListener('pointerdown',e=>{if(e.target.closest('.node-body')||e.target.closest('a'))return;drag={x:e.clientX,y:e.clientY,tx,ty};viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging');});
 viewport.addEventListener('pointermove',e=>{if(!drag)return;tx=drag.tx+e.clientX-drag.x;ty=drag.ty+e.clientY-drag.y;transform();});
@@ -3926,7 +3926,7 @@ viewport.addEventListener('keydown',e=>{if(e.key==='+'||e.key==='=')zoom(1.25);i
 document.getElementById('fit').onclick=fit;document.getElementById('core').onclick=core;
 document.getElementById('plus').onclick=()=>zoom(1.25);document.getElementById('minus').onclick=()=>zoom(.8);
 document.getElementById('full').onclick=()=>document.documentElement.requestFullscreen().catch(console.error);
-window.addEventListener('resize',core);
+window.addEventListener('resize',fit);
 let lastSource='',busy=false;
 async function load(){
  if(busy)return;busy=true;
