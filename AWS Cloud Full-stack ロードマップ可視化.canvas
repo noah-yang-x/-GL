@@ -9,6 +9,46 @@
 		{"id":"compute_response","type":"text","text":"## Lambda / Node.js\n\nJSONレスポンス（JSON Response）を生成する","x":-160,"y":500,"width":380,"height":120},
 		{"id":"api_response","type":"text","text":"## API Gateway\n\nJSONレスポンス（JSON Response）を返す","x":-160,"y":220,"width":380,"height":120},
 		{
+			"id":"6c3284e569765081",
+			"type":"text",
+			"text":"フロントエンド（Frontend）のコード（Code）を変更し、S3に反映する\n（コマンドライン（Command line）から更新）",
+			"styleAttributes":{},
+			"x":-448,
+			"y":-2355,
+			"width":283,
+			"height":165
+		},
+		{
+			"id":"4ec035eda2f71cfd",
+			"type":"text",
+			"text":"ローカル（Local）のVS CodeでAWS CLIを使えるようにする",
+			"styleAttributes":{},
+			"x":-458,
+			"y":-2040,
+			"width":302,
+			"height":60
+		},
+		{
+			"id":"90cb45cf38f5c62a",
+			"type":"text",
+			"text":"AWSのデータベース（Database）を使う",
+			"styleAttributes":{},
+			"x":-437,
+			"y":-3080,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"9b63cb2eb5ac23bd",
+			"type":"text",
+			"text":"AWSの\n　データベース",
+			"styleAttributes":{"shape":"bracket-left","textAlign":"left"},
+			"x":-580,
+			"y":-3370,
+			"width":60,
+			"height":370
+		},
+		{
 			"id":"2d49f63ef6bcdd61",
 			"type":"text",
 			"text":"![[Pasted image 20261007132942.png]]",
@@ -19,16 +59,6 @@
 			"height":220
 		},
 		{
-			"id":"8b6410a5a0b755b2",
-			"type":"text",
-			"text":"トップページ（Top page）へのアクセス（Access）を設定する（CloudFront内）",
-			"styleAttributes":{},
-			"x":-448,
-			"y":-1821,
-			"width":283,
-			"height":103
-		},
-		{
 			"id":"1ed82977deed9244",
 			"type":"text",
 			"text":"「Default root object（任意）」に入力する",
@@ -36,48 +66,6 @@
 			"x":-102,
 			"y":-1800,
 			"width":415,
-			"height":60
-		},
-		{"id":"a67c7e7dbee25472","type":"text","text":"CloudFrontとは？","x":-94,"y":-1695,"width":250,"height":60},
-		{
-			"id":"51abf3b5e1cd57d4",
-			"type":"text",
-			"text":"*** オリジン（Origin）",
-			"styleAttributes":{},
-			"x":295,
-			"y":-1505,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"bbd2025fff82f08c",
-			"type":"text",
-			"text":"オリジン（Origin）の種類",
-			"styleAttributes":{},
-			"x":-94,
-			"y":-1565,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"abf666786e30b9f5",
-			"type":"text",
-			"text":"オリジン（Origin）",
-			"styleAttributes":{},
-			"x":-94,
-			"y":-1505,
-			"width":260,
-			"height":60
-		},
-		{"id":"95fd96929e84a1f8","type":"text","text":"CloudFrontのDistributionを作成する","x":-448,"y":-1695,"width":283,"height":60},
-		{
-			"id":"5e4c9a663f2098ae",
-			"type":"text",
-			"text":"タグ（Tag）とは？",
-			"styleAttributes":{},
-			"x":-94,
-			"y":-1625,
-			"width":260,
 			"height":60
 		},
 		{
@@ -101,16 +89,6 @@
 			"height":60
 		},
 		{
-			"id":"6c3284e569765081",
-			"type":"text",
-			"text":"フロントエンド（Frontend）のコード（Code）を変更し、S3に反映する\n（コマンドライン（Command line）から更新）",
-			"styleAttributes":{},
-			"x":-448,
-			"y":-2355,
-			"width":283,
-			"height":165
-		},
-		{
 			"id":"30f082efa4d90a59",
 			"type":"text",
 			"text":"CloudFront経由で公開した内容に更新が反映されていないことに気づく",
@@ -119,16 +97,6 @@
 			"y":-2230,
 			"width":260,
 			"height":110
-		},
-		{
-			"id":"4ec035eda2f71cfd",
-			"type":"text",
-			"text":"ローカル（Local）のVS CodeでAWS CLIを使えるようにする",
-			"styleAttributes":{},
-			"x":-458,
-			"y":-2040,
-			"width":302,
-			"height":60
 		},
 		{
 			"id":"64f882cd8867ab28",
@@ -169,6 +137,57 @@
 			"y":-2040,
 			"width":473,
 			"height":100
+		},
+		{
+			"id":"71a51e999f22a1ab",
+			"type":"text",
+			"text":"React → API Gateway → Lambda → データを返す → React で表示",
+			"styleAttributes":{},
+			"x":-140,
+			"y":-3280,
+			"width":660,
+			"height":60
+		},
+		{"id":"a67c7e7dbee25472","type":"text","text":"CloudFrontとは？","x":-94,"y":-1695,"width":250,"height":60},
+		{
+			"id":"51abf3b5e1cd57d4",
+			"type":"text",
+			"text":"*** オリジン（Origin）",
+			"styleAttributes":{},
+			"x":295,
+			"y":-1505,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"bbd2025fff82f08c",
+			"type":"text",
+			"text":"オリジン（Origin）の種類",
+			"styleAttributes":{},
+			"x":-94,
+			"y":-1565,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"abf666786e30b9f5",
+			"type":"text",
+			"text":"オリジン（Origin）",
+			"styleAttributes":{},
+			"x":-94,
+			"y":-1505,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"5e4c9a663f2098ae",
+			"type":"text",
+			"text":"タグ（Tag）とは？",
+			"styleAttributes":{},
+			"x":-94,
+			"y":-1625,
+			"width":260,
+			"height":60
 		},
 		{"id":"fb17d0bff6474e48","type":"file","file":"日语/CloudFront 理解図解.md","x":1085,"y":-1865,"width":2855,"height":400},
 		{
@@ -212,45 +231,16 @@
 			"height":60
 		},
 		{
-			"id":"10ac939218693316",
+			"id":"8b6410a5a0b755b2",
 			"type":"text",
-			"text":"設定",
+			"text":"トップページ（Top page）へのアクセス（Access）を設定する（CloudFront内）",
 			"styleAttributes":{},
-			"x":-94,
-			"y":-1345,
-			"width":260,
-			"height":60
+			"x":-448,
+			"y":-1821,
+			"width":283,
+			"height":103
 		},
-		{
-			"id":"90cb45cf38f5c62a",
-			"type":"text",
-			"text":"AWSのデータベース（Database）を使う",
-			"styleAttributes":{},
-			"x":-437,
-			"y":-3080,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"9b63cb2eb5ac23bd",
-			"type":"text",
-			"text":"AWSの\n　データベース",
-			"styleAttributes":{"shape":"bracket-left","textAlign":"left"},
-			"x":-580,
-			"y":-3370,
-			"width":60,
-			"height":370
-		},
-		{
-			"id":"71a51e999f22a1ab",
-			"type":"text",
-			"text":"React → API Gateway → Lambda → データを返す → React で表示",
-			"styleAttributes":{},
-			"x":-140,
-			"y":-3280,
-			"width":660,
-			"height":60
-		},
+		{"id":"95fd96929e84a1f8","type":"text","text":"CloudFrontのDistributionを作成する","x":-448,"y":-1695,"width":283,"height":60},
 		{
 			"id":"b776ec85636d705e",
 			"type":"text",
@@ -271,6 +261,20 @@
 			"width":565,
 			"height":80
 		},
+		{"id":"620ee06d6b744158","type":"text","text":"S3へアップロード（Upload）する","x":-437,"y":-950,"width":250,"height":60},
+		{"id":"c8bf5f11d482f767","type":"text","text":"S3バケット（Bucket）を作成する","x":-437,"y":-783,"width":250,"height":60},
+		{"id":"5e12df435ec45f0e","type":"text","text":"プロジェクト（Project）を作成する","x":-437,"y":-590,"width":250,"height":60},
+		{"id":"ff1a72989121603e","type":"text","text":"## ブラウザ（Browser） / React","x":-492,"y":-440,"width":360,"height":60},
+		{
+			"id":"10ac939218693316",
+			"type":"text",
+			"text":"設定",
+			"styleAttributes":{},
+			"x":-94,
+			"y":-1345,
+			"width":260,
+			"height":60
+		},
 		{
 			"id":"c566fccb7e8c3f28",
 			"type":"text",
@@ -281,13 +285,9 @@
 			"width":260,
 			"height":80
 		},
-		{"id":"620ee06d6b744158","type":"text","text":"S3へアップロード（Upload）する","x":-437,"y":-950,"width":250,"height":60},
-		{"id":"c8bf5f11d482f767","type":"text","text":"S3バケット（Bucket）を作成する","x":-437,"y":-783,"width":250,"height":60},
 		{"id":"862f8af85f4cd4f5","type":"text","text":"Block Public Accessの設定 - - - いつ、どう使う？","x":-98,"y":-780,"width":295,"height":57},
 		{"id":"a4e16129b72cfd46","type":"text","text":"タグ（Tag） - - - 実際のプロジェクト（Project）ではどう使う？","x":-98,"y":-708,"width":518,"height":60},
-		{"id":"1eed8fd05d2d1720","type":"text","text":"今は扱わない：デフォルトの暗号化（Default encryption）と詳細設定（Advanced settings）","x":-98,"y":-620,"width":731,"height":60},
-		{"id":"5e12df435ec45f0e","type":"text","text":"プロジェクト（Project）を作成する","x":-437,"y":-590,"width":250,"height":60},
-		{"id":"ff1a72989121603e","type":"text","text":"## ブラウザ（Browser） / React","x":-492,"y":-440,"width":360,"height":60}
+		{"id":"1eed8fd05d2d1720","type":"text","text":"今は扱わない：デフォルトの暗号化（Default encryption）と詳細設定（Advanced settings）","x":-98,"y":-620,"width":731,"height":60}
 	],
 	"edges":[
 		{"id":"flow0","fromNode":"browser","fromSide":"right","toNode":"api_request","toSide":"top","label":"HTTPS · GET /devices"},
