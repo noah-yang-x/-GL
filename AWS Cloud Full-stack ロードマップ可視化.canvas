@@ -3,6 +3,7 @@
 		{"id":"pg_system_container","type":"group","x":17360,"y":-1520,"width":4760,"height":1730,"label":"db コンテナー（Container）｜公式（こうしき）Docker イメージ（Image）から作成（さくせい）して起動（きどう）したもの。以下（いか）のプログラム（Program）はすべてこのコンテナー（Container）内（ない）で動作（どうさ）する。"},
 		{"id":"complete_web_runtime","type":"group","x":3160,"y":240,"width":3920,"height":1390,"label":"AWS 上（じょう）で動作（どうさ）する Python バックエンド（Backend）の Docker コンテナー（Container）"},
 		{"id":"1a9bbcd1f7290b12","type":"group","x":3160,"y":-840,"width":3920,"height":400},
+		{"id":"python_core_overview_runtime","type":"group","x":-600,"y":680,"width":2600,"height":310,"label":"AWS 上（じょう）の Docker Container｜左右（さゆう）の Python / FastAPI は同じ（おなじ）Backend"},
 		{"id":"d73a9aecc7af9c46","type":"group","x":4080,"y":-2640,"width":364,"height":295,"label":"S3 ストレージ（Storage）の使用量（しようりょう）"},
 		{"id":"complete_web_open","type":"text","text":"## ブラウザー（Browser）でウェブサイト（Website）を開く（ひらく）\n\n公開（こうかい）済み（ずみ）のウェブサイト（Website）のアドレス（Address）にアクセス（Access）","x":3240,"y":-690,"width":810,"height":120,"color":"4"},
 		{"id":"complete_web_s3","type":"text","text":"## AWS S3\n\nフロントエンド（Frontend）のビルド（Build）成果物（せいかぶつ）を保存（ほぞん）\nAWS CloudFront でキャッシュミス（Cache Miss）が発生（はっせい）したときに読み出す（よみだす）","x":6600,"y":-800,"width":400,"height":320,"color":"4"},
@@ -12,7 +13,6 @@
 		{"id":"complete_web_uvicorn_response","type":"text","text":"## Uvicorn\n\nアプリケーション（Application）から ASGI レスポンス（Response）を受け取る（うけとる）\nHTTP レスポンス（Response）の形式（けいしき）にエンコード（Encode）して送信（そうしん）","x":3290,"y":360,"width":780,"height":120},
 		{"id":"complete_web_fastapi_route","type":"text","text":"## FastAPI\n\nGET /devices に対応（たいおう）するルート（Route）を特定（とくてい）\nPython のデバイス（Device）取得（しゅとく）用（よう）の関数（かんすう）を呼び出す（よびだす）","x":6045,"y":580,"width":790,"height":140},
 		{"id":"complete_web_entry_response","type":"text","text":"## AWS API エントリーポイント（Entry Point）\n\nバックエンド（Backend）の HTTP レスポンス（Response）をブラウザー（Browser）に返す（かえす）\n右側（みぎがわ）のエントリーポイント（Entry Point）と同じ（おなじ）もの。こちらはレスポンス（Response）の戻り（もどり）の経路（けいろ）を表す（あらわす）。","x":3212,"y":-75,"width":935,"height":150},
-		{"id":"api_response","type":"text","text":"## API Gateway\n\nJSON レスポンス（Response）を返す（かえす）","x":-160,"y":220,"width":380,"height":120},
 		{"id":"620ee06d6b744158","type":"text","text":"S3 にアップロード（Upload）","x":4143,"y":-2610,"width":250,"height":60},
 		{"id":"c8bf5f11d482f767","type":"text","text":"S3 バケット（Bucket）を作成（さくせい）","x":4143,"y":-2443,"width":250,"height":60},
 		{"id":"ff1a72989121603e","type":"text","text":"## ブラウザー（Browser） / React","x":4059,"y":-2100,"width":418,"height":60},
@@ -21,11 +21,6 @@
 		{"id":"862f8af85f4cd4f5","type":"text","text":"パブリックアクセス（Public Access）のブロック（Block）設定（せってい） - - - いつ、どのように使う（つかう）？","x":4482,"y":-2443,"width":1011,"height":60},
 		{"id":"a4e16129b72cfd46","type":"text","text":"タグ（Tags） - - - 実際（じっさい）のプロジェクト（Project）ではどう活用（かつよう）する？","x":4482,"y":-2368,"width":758,"height":60},
 		{"id":"1eed8fd05d2d1720","type":"text","text":"今（いま）は扱わない（あつかわない）：デフォルト（Default）の暗号化（あんごうか）と詳細設定（しょうさいせってい）（Advanced Settings）","x":4482,"y":-2308,"width":1098,"height":60},
-		{"id":"database","type":"text","text":"## DynamoDB\n\nクエリ（Query）の結果（けっか）を返す（かえす）","x":400,"y":740,"width":440,"height":120},
-		{"id":"compute_response","type":"text","text":"## Lambda / Node.js\n\nJSON レスポンス（Response）を生成（せいせい）","x":-160,"y":500,"width":380,"height":120},
-		{"id":"compute_request","type":"text","text":"## Lambda / Node.js\n\nデバイス（Device）一覧（いちらん）を取得（しゅとく）","x":1000,"y":500,"width":380,"height":120},
-		{"id":"browser","type":"text","text":"## ブラウザー（Browser） / React\n\nリクエスト（Request）を送信（そうしん）\nJSON を受信（じゅしん）し、デバイス（Device）一覧（いちらん）を表示（ひょうじ）","x":400,"y":0,"width":440,"height":150},
-		{"id":"api_request","type":"text","text":"## API Gateway\n\nデバイス（Device）一覧（いちらん）のリクエスト（Request）を受信（じゅしん）","x":1000,"y":220,"width":380,"height":120},
 		{"id":"pg_system_compose","type":"text","text":"## Docker Compose\n\ndb サービス（Service）の設定（せってい）を読み込む（よみこむ）\nDocker Engine に起動（きどう）を指示（しじ）する","x":16260,"y":-2450,"width":570,"height":200},
 		{
 			"id":"pg_system_compose_explanation",
@@ -630,7 +625,40 @@
 			"y":1340,
 			"width":697,
 			"height":260
-		}
+		},
+		{
+			"id":"878382e93f0d0d38",
+			"type":"text",
+			"text":"备注说明",
+			"styleAttributes":{"shape":"bracket-left","textAlign":"right"},
+			"x":2820,
+			"y":-970,
+			"width":60,
+			"height":3050
+		},
+		{"id":"python_core_overview_python_response","type":"text","text":"## Python / FastAPI\n\n取得（しゅとく）したデバイス（Device）一覧（いちらん）を JSON Response にする","x":-540,"y":750,"width":640,"height":170},
+		{"id":"python_core_overview_python_request","type":"text","text":"## Python / FastAPI\n\nGET /devices を処理（しょり）し、\nPostgreSQL Server にデバイス（Device）一覧（いちらん）を問い合わせる（といあわせる）","x":1300,"y":750,"width":640,"height":170},
+		{"id":"python_core_overview_entry_response","type":"text","text":"## AWS API エントリーポイント（Entry Point）\n\nPython Backend の JSON Response を\nBrowser に返す（かえす）","x":-540,"y":430,"width":640,"height":150},
+		{"id":"python_core_overview_title","type":"text","text":"## 主（おも）な流れ（ながれ）｜Python・Docker・AWS","x":10,"y":-40,"width":1450,"height":90},
+		{"id":"python_core_overview_browser","type":"text","text":"## Browser / React\n\nFrontend は AWS S3・AWS CloudFront で配信（はいしん）\nGET /devices を送り（おくり）、JSON を受け取って（うけとって）表示（ひょうじ）","x":420,"y":170,"width":620,"height":180},
+		{"id":"python_core_overview_database","type":"text","text":"## PostgreSQL Server（AWS）\n\ndevice_dashboard Database から\nデバイス（Device）一覧（いちらん）を取得（しゅとく）","x":420,"y":1100,"width":620,"height":170},
+		{"id":"python_core_overview_entry_request","type":"text","text":"## AWS API エントリーポイント（Entry Point）\n\nBrowser の HTTPS Request を受け付け（うけつけ）、Python Backend に渡す（わたす）","x":1300,"y":430,"width":640,"height":150},
+		{
+			"id":"c55ff7dd7b0bd0e2",
+			"type":"text",
+			"text":"",
+			"styleAttributes":{"shape":"bracket-right","textAlign":"left"},
+			"x":2120,
+			"y":-192,
+			"width":60,
+			"height":1495
+		},
+		{"id":"api_response","type":"text","text":"## API Gateway\n\nJSON レスポンス（Response）を返す（かえす）","x":-3840,"y":420,"width":380,"height":120},
+		{"id":"compute_response","type":"text","text":"## Lambda / Node.js\n\nJSON レスポンス（Response）を生成（せいせい）","x":-3840,"y":700,"width":380,"height":120},
+		{"id":"browser","type":"text","text":"## ブラウザー（Browser） / React\n\nリクエスト（Request）を送信（そうしん）\nJSON を受信（じゅしん）し、デバイス（Device）一覧（いちらん）を表示（ひょうじ）","x":-3280,"y":200,"width":440,"height":150},
+		{"id":"database","type":"text","text":"## DynamoDB\n\nクエリ（Query）の結果（けっか）を返す（かえす）","x":-3280,"y":940,"width":440,"height":120},
+		{"id":"api_request","type":"text","text":"## API Gateway\n\nデバイス（Device）一覧（いちらん）のリクエスト（Request）を受信（じゅしん）","x":-2680,"y":420,"width":380,"height":120},
+		{"id":"compute_request","type":"text","text":"## Lambda / Node.js\n\nデバイス（Device）一覧（いちらん）を取得（しゅとく）","x":-2680,"y":700,"width":380,"height":120}
 	],
 	"edges":[
 		{
@@ -1655,6 +1683,70 @@
 			"toNode":"c09f01bb7a2c452e",
 			"toSide":"right",
 			"label":"理由"
+		},
+		{
+			"id":"python_core_overview_edge_0",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"python_core_overview_browser",
+			"fromSide":"right",
+			"toNode":"python_core_overview_entry_request",
+			"toSide":"top",
+			"label":"HTTPS · GET /devices"
+		},
+		{
+			"id":"python_core_overview_edge_1",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"python_core_overview_entry_request",
+			"fromSide":"bottom",
+			"toNode":"python_core_overview_python_request",
+			"toSide":"top",
+			"label":"Request"
+		},
+		{
+			"id":"python_core_overview_edge_2",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"python_core_overview_python_request",
+			"fromSide":"bottom",
+			"toNode":"python_core_overview_database",
+			"toSide":"right",
+			"label":"SQL"
+		},
+		{
+			"id":"python_core_overview_edge_3",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"python_core_overview_database",
+			"fromSide":"left",
+			"toNode":"python_core_overview_python_response",
+			"toSide":"bottom",
+			"label":"Query Result"
+		},
+		{
+			"id":"python_core_overview_edge_4",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"python_core_overview_python_response",
+			"fromSide":"top",
+			"toNode":"python_core_overview_entry_response",
+			"toSide":"bottom",
+			"label":"JSON Response"
+		},
+		{
+			"id":"python_core_overview_edge_5",
+			"styleAttributes":{"pathfindingMethod":"square"},
+			"fromNode":"python_core_overview_entry_response",
+			"fromSide":"top",
+			"toNode":"python_core_overview_browser",
+			"toSide":"left",
+			"label":"JSON Response"
+		},
+		{
+			"id":"1ce3edab836674cd",
+			"awsFromPort":{"side":"right","ratio":0.5},
+			"awsToPort":{"side":"left","ratio":0.5},
+			"styleAttributes":{},
+			"fromNode":"c55ff7dd7b0bd0e2",
+			"fromSide":"right",
+			"toNode":"878382e93f0d0d38",
+			"toSide":"left"
 		}
 	],
 	"metadata":{

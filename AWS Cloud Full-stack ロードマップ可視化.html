@@ -3842,8 +3842,7 @@ function focus(nodes){
 }
 function fit(){focus(current.nodes);}
 function core(){
- const ids=new Set(['browser','api_request','compute_request','database','compute_response','api_response']);
- const nodes=current.nodes.filter(n=>ids.has(n.id));focus(nodes.length?nodes:current.nodes);
+ const nodes=current.nodes.filter(n=>n.id.startsWith('python_core_overview_'));focus(nodes.length?nodes:current.nodes);
 }
 function zoom(factor,x=viewport.clientWidth/2,y=viewport.clientHeight/2){
  const next=Math.max(.07,Math.min(4,scale*factor)),ratio=next/scale;tx=x-(x-tx)*ratio;ty=y-(y-ty)*ratio;scale=next;transform();
@@ -3918,7 +3917,7 @@ async function render(canvas,keepView=false){
   catch(error){window.canvasPreview.errors.push(String(error));}
  }
  document.getElementById('status').textContent=canvas.nodes.length+' nodes / '+canvas.edges.length+' edges';
- if(!keepView)fit();else transform();window.canvasPreview.ready=true;
+ if(!keepView)core();else transform();window.canvasPreview.ready=true;
 }
 viewport.addEventListener('pointerdown',e=>{if(e.target.closest('.node-body')||e.target.closest('a'))return;drag={x:e.clientX,y:e.clientY,tx,ty};viewport.setPointerCapture(e.pointerId);viewport.classList.add('dragging');});
 viewport.addEventListener('pointermove',e=>{if(!drag)return;tx=drag.tx+e.clientX-drag.x;ty=drag.ty+e.clientY-drag.y;transform();});
