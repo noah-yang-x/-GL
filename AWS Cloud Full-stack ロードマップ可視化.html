@@ -3820,6 +3820,12 @@ const color=c=>colors[c]||(/^#[0-9a-f]{6}$/i.test(c||'')?c:'#878787');
 function element(tag,attrs={},parent=scene){const el=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))el.setAttribute(k,v);parent.append(el);return el;}
 function markdown(text){
  text=text.replace(/!\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g,(_,name)=>resources[name]?.kind==='image'?'<img src="'+resources[name].url+'" alt="'+esc(name)+'">':'<p>'+esc(name)+'</p>');
+ text=text.replace(/\[\[([^\]|]+)(?:\|([^\]]*))?\]\]/g,(_,target,label)=>{
+  const [file,...fragment]=target.split('#');
+  const published=file.replace(/^日本語\//,'').replace(/\.md$/i,'.html');
+  const href=published.split('/').map(encodeURIComponent).join('/')+(fragment.length?'#'+encodeURIComponent(fragment.join('#')):'');
+  return '<a href="'+esc(href)+'">'+esc(label||file)+'</a>';
+ });
  return marked.parse(text);
 }
 function transform(){scene.setAttribute('transform','translate('+tx+' '+ty+') scale('+scale+')');}
