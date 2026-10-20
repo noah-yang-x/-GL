@@ -3943,7 +3943,7 @@ async function load(){
     resources[n.file]={kind:'markdown',text:await r.text()};
    }
    for(const match of (n.text||'').matchAll(/!\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g)){
-    resources[match[1]]={kind:'image',url:encodeURIComponent(match[1])};
+    resources[match[1]]={kind:'image',url:match[1].split('/').map(encodeURIComponent).join('/')};
    }
   }
   await render(canvas,!!lastSource);lastSource=source;

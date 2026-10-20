@@ -10,7 +10,7 @@
 		{
 			"id":"4ab697d1d31ce988",
 			"type":"text",
-			"text":"![[Pasted image 20261019143609.png]]",
+			"text":"![[IMG/Pasted image 20261019143609.png]]",
 			"styleAttributes":{},
 			"x":11488,
 			"y":-380,
@@ -133,7 +133,7 @@
 		{
 			"id":"7bed2a75f2abe964",
 			"type":"text",
-			"text":"![[Pasted image 20261019143415.png]]",
+			"text":"![[IMG/Pasted image 20261019143415.png]]",
 			"styleAttributes":{},
 			"x":11488,
 			"y":260,
@@ -197,7 +197,7 @@
 		{
 			"id":"bd22affb0426232d",
 			"type":"text",
-			"text":"![[Pasted image 20261019143506.png]]",
+			"text":"![[IMG/Pasted image 20261019143506.png]]",
 			"styleAttributes":{},
 			"x":11488,
 			"y":-515,
@@ -217,7 +217,7 @@
 		{
 			"id":"a20e0b0dd3131937",
 			"type":"text",
-			"text":"![[Pasted image 20261019143827.png]]",
+			"text":"![[IMG/Pasted image 20261019143827.png]]",
 			"styleAttributes":{},
 			"x":11488,
 			"y":-1180,
@@ -240,7 +240,6 @@
 		{"id":"complete_web_fastapi_route","type":"text","text":"## FastAPI\n\nGET /devices に対応（たいおう）するルート（Route）を特定（とくてい）\nPython のデバイス（Device）取得（しゅとく）用（よう）の関数（かんすう）を呼び出す（よびだす）","x":6045,"y":580,"width":790,"height":140},
 		{"id":"complete_web_entry_response","type":"text","text":"## AWS API エントリーポイント（Entry Point）\n\nバックエンド（Backend）の HTTP レスポンス（Response）をブラウザー（Browser）に返す（かえす）\n右側（みぎがわ）のエントリーポイント（Entry Point）と同じ（おなじ）もの。こちらはレスポンス（Response）の戻り（もどり）の経路（けいろ）を表す（あらわす）。","x":3212,"y":-75,"width":935,"height":150},
 		{"id":"practice_link_frontend_api","type":"text","text":"## 関連（かんれん）する実習（じっしゅう）3｜ローカル（Local）でのフロントエンド（Frontend）とバックエンド（Backend）の連携（れんけい）\n\nまず GET /devices でバックエンド（Backend）のダミーデータ（Dummy Data）を返す（かえす）\nReact から fetch で API を呼び出し（よびだし）、CORS を設定（せってい）\nバックエンド（Backend）のデータ（Data）を変更（へんこう） → ブラウザー（Browser）で一覧（いちらん）が変わる（かわる）ことを確認（かくにん）","x":7588,"y":1725,"width":650,"height":270,"color":"4"},
-		{"id":"practice_link_backend_local","type":"text","text":"## 関連（かんれん）する実習（じっしゅう）2｜ローカル（Local）のバックエンド（Backend）サービス（Service）\n\nvenv を作成（さくせい）し、FastAPI / Uvicorn をインストール（Install）\nmain.py を作成（さくせい）してサービス（Service）を起動（きどう）\nブラウザー（Browser）から API にリクエスト（Request）を送り（おくり）、バックエンド（Backend）のレスポンス（Response）を確認（かくにん）","x":7588,"y":2050,"width":650,"height":260,"color":"4"},
 		{
 			"id":"f7152d01acc0c839",
 			"type":"text",
@@ -610,7 +609,8 @@
 			"width":744,
 			"height":130
 		},
-		{"id":"practice_link_database_local","type":"text","text":"## 関連（かんれん）する実習（じっしゅう）4｜ローカル（Local）のデータベース（Database）環境（かんきょう）\n\nまずローカル（Local）で Docker を使って（つかって）PostgreSQL データベース（Database）を起動（きどう）\n.env + compose.yaml → データベース（Database）を起動（きどう）\nSQL を実行（じっこう）し、データベース（Database）にアクセス（Access）できることを確認（かくにん）","x":7588,"y":-1235,"width":650,"height":280,"color":"4"}
+		{"id":"practice_link_database_local","type":"text","text":"## 関連（かんれん）する実習（じっしゅう）4｜ローカル（Local）のデータベース（Database）環境（かんきょう）\n\nまずローカル（Local）で Docker を使って（つかって）PostgreSQL データベース（Database）を起動（きどう）\n.env + compose.yaml → データベース（Database）を起動（きどう）\nSQL を実行（じっこう）し、データベース（Database）にアクセス（Access）できることを確認（かくにん）","x":7588,"y":-1235,"width":650,"height":280,"color":"4"},
+		{"id":"practice_link_backend_local","type":"text","text":"## 関連（かんれん）する実習（じっしゅう）2｜ローカル（Local）のバックエンド（Backend）サービス（Service）\n\nvenv を作成（さくせい）し、FastAPI / Uvicorn をインストール（Install）\nmain.py を作成（さくせい）してサービス（Service）を起動（きどう）\nブラウザー（Browser）から API にリクエスト（Request）を送り（おくり）、バックエンド（Backend）のレスポンス（Response）を確認（かくにん）","x":7588,"y":2070,"width":650,"height":260,"color":"4"}
 	],
 	"edges":[
 		{
