@@ -366,27 +366,6 @@
 			"width":1236,
 			"height":60
 		},
-		{
-			"id":"7d46dd97840bbf18",
-			"type":"text",
-			"text":"```\n現在（げんざい）のプロジェクト（Project）専用（せんよう）の Python パッケージ（Package）のインストール（Install）先（さき）を用意（ようい）する\n```",
-			"styleAttributes":{"shape":"document"},
-			"x":10056,
-			"y":815,
-			"width":380,
-			"height":150,
-			"color":"4"
-		},
-		{
-			"id":"f7152d01acc0c839",
-			"type":"text",
-			"text":"vene",
-			"styleAttributes":{},
-			"x":10056,
-			"y":950,
-			"width":380,
-			"height":60
-		},
 		{"id":"practice_link_frontend_api","type":"text","text":"## 関連（かんれん）する実習（じっしゅう）3｜ローカル（Local）でのフロントエンド（Frontend）とバックエンド（Backend）の連携（れんけい）\n\nまず GET /devices でバックエンド（Backend）のダミーデータ（Dummy Data）を返す（かえす）\nReact から fetch で API を呼び出し（よびだし）、CORS を設定（せってい）\nバックエンド（Backend）のデータ（Data）を変更（へんこう） → ブラウザー（Browser）で一覧（いちらん）が変わる（かわる）ことを確認（かくにん）","x":7840,"y":490,"width":650,"height":270,"color":"4"},
 		{"id":"practice_link_backend_local","type":"text","text":"## 関連（かんれん）する実習（じっしゅう）2｜ローカル（Local）のバックエンド（Backend）サービス（Service）\n\nvenv を作成（さくせい）し、FastAPI / Uvicorn をインストール（Install）\nmain.py を作成（さくせい）してサービス（Service）を起動（きどう）\nブラウザー（Browser）から API にリクエスト（Request）を送り（おくり）、バックエンド（Backend）のレスポンス（Response）を確認（かくにん）","x":7840,"y":835,"width":650,"height":260,"color":"4"},
 		{
@@ -1723,6 +1702,27 @@
 			"width":400,
 			"height":60,
 			"color":"1"
+		},
+		{
+			"id":"7d46dd97840bbf18",
+			"type":"text",
+			"text":"```\n現在（げんざい）のプロジェクト（Project）専用（せんよう）の Python パッケージ（Package）のインストール（Install）先（さき）を用意（ようい）する\n```",
+			"styleAttributes":{"shape":"document"},
+			"x":10264,
+			"y":815,
+			"width":380,
+			"height":150,
+			"color":"4"
+		},
+		{
+			"id":"f7152d01acc0c839",
+			"type":"text",
+			"text":"vene",
+			"styleAttributes":{},
+			"x":10264,
+			"y":935,
+			"width":380,
+			"height":60
 		}
 	],
 	"edges":[
@@ -1961,6 +1961,7 @@
 			"styleAttributes":{},
 			"toFloating":false,
 			"fromFloating":false,
+			"awsLabelWidth":332,
 			"fromNode":"a05bb79b5c82c330",
 			"fromSide":"right",
 			"toNode":"f7152d01acc0c839",

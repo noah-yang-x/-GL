@@ -3884,15 +3884,21 @@ function edge(e,map){
 }
 async function node(n){
  const group=element('g',{'data-node':n.id}),stroke=color(n.color);
- if(n.styleAttributes?.shape==='bracket-left'){
-  element('path',{d:'M'+(n.x+n.width)+','+n.y+' H'+n.x+' V'+(n.y+n.height)+' H'+(n.x+n.width),stroke,'stroke-width':2,fill:'none'},group);
+ const bracket=n.styleAttributes?.shape;
+ if(bracket==='bracket-left'||bracket==='bracket-right'){
+  const left=bracket==='bracket-left',x=left?n.x+n.width-16:n.x;
+  element('path',{d:left?'M'+(x+15)+','+(n.y+1)+' H'+(x+1)+' V'+(n.y+n.height-1)+' H'+(x+15):'M'+(x+1)+','+(n.y+1)+' H'+(x+15)+' V'+(n.y+n.height-1)+' H'+(x+1),stroke,'stroke-width':2,fill:'none'},group);
  }else element('rect',{x:n.x,y:n.y,width:n.width,height:n.height,rx:8,fill:'#222',stroke,'stroke-width':1.5},group);
  const foreign=element('foreignObject',{x:n.x+1,y:n.y+1,width:n.width-2,height:n.height-2},group);
  const body=document.createElementNS('http://www.w3.org/1999/xhtml','div');body.className='node-body';
  if(n.styleAttributes?.textAlign)body.style.textAlign=n.styleAttributes.textAlign;
- if(n.styleAttributes?.shape==='bracket-left')body.classList.add('vertical');
+ if(bracket==='bracket-left'||bracket==='bracket-right'){
+  body.style.overflow='auto';
+  body.style[bracket==='bracket-left'?'paddingRight':'paddingLeft']='26px';
+  body.style.textAlign=bracket==='bracket-left'?'right':'left';
+ }
  foreign.append(body);
- if(n.type==='text'){if(body.classList.contains('vertical'))body.textContent=(n.text||'').trim();else body.innerHTML=markdown(n.text||'');}
+ if(n.type==='text')body.innerHTML=markdown(n.text||'');
  else if(n.type==='file'){
   const title=document.createElement('div');title.className='node-file-title';title.textContent=n.file;body.append(title);
   const resource=resources[n.file];
