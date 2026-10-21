@@ -2,11 +2,11 @@
 	"nodes":[
 		{"id":"pg_system_container","type":"group","x":22240,"y":3320,"width":4760,"height":1730,"label":"db コンテナー（Container）｜公式（こうしき）Docker イメージ（Image）から作成（さくせい）して起動（きどう）したもの。以下（いか）のプログラム（Program）はすべてこのコンテナー（Container）内（ない）で動作（どうさ）する。"},
 		{"id":"complete_web_runtime","type":"group","x":3160,"y":240,"width":3920,"height":1390,"label":"AWS 上（じょう）で動作（どうさ）する Python バックエンド（Backend）の Docker コンテナー（Container）"},
-		{"id":"p5native_practice5-PREP","type":"group","x":21832,"y":-6620,"width":2428,"height":1351,"label":"一、テーブルとサンプルデータの準備"},
+		{"id":"p5native_practice5-PREP","type":"group","x":21832,"y":-6620,"width":2428,"height":1351,"color":"1","label":"一、テーブルとサンプルデータの準備"},
 		{"id":"1a9bbcd1f7290b12","type":"group","x":3160,"y":-840,"width":3920,"height":400},
-		{"id":"p5native_practice5-RUN","type":"group","x":22114,"y":-4622,"width":686,"height":1622,"label":"三、ブラウザーからのリクエストと検索結果の返却"},
+		{"id":"p5native_practice5-RUN","type":"group","x":22114,"y":-4622,"width":686,"height":1622,"color":"1","label":"三、ブラウザーからのリクエストと検索結果の返却"},
 		{"id":"python_core_overview_runtime","type":"group","x":-600,"y":680,"width":2600,"height":310,"label":"AWS 上（じょう）の Docker Container｜左右（さゆう）の Python / FastAPI は同じ（おなじ）Backend"},
-		{"id":"p5native_practice5-CHECK","type":"group","x":22439,"y":-5160,"width":1215,"height":413,"label":"二、個別の検証作業"},
+		{"id":"p5native_practice5-CHECK","type":"group","x":22439,"y":-5160,"width":1215,"height":413,"color":"1","label":"二、個別の検証作業"},
 		{"id":"d73a9aecc7af9c46","type":"group","x":4080,"y":-2640,"width":364,"height":295,"label":"S3 ストレージ（Storage）の使用量（しようりょう）"},
 		{
 			"id":"c566fccb7e8c3f28",
@@ -1471,7 +1471,8 @@
 			"x":22440,
 			"y":-6596,
 			"width":320,
-			"height":96
+			"height":96,
+			"color":"1"
 		},
 		{
 			"id":"p5native_SEED",
@@ -1481,7 +1482,8 @@
 			"x":22980,
 			"y":-5820,
 			"width":305,
-			"height":80
+			"height":80,
+			"color":"1"
 		},
 		{
 			"id":"p5native_TABLE",
@@ -1491,7 +1493,8 @@
 			"x":22470,
 			"y":-5480,
 			"width":260,
-			"height":104
+			"height":104,
+			"color":"1"
 		},
 		{
 			"id":"p5native_MODEL",
@@ -1501,7 +1504,8 @@
 			"x":23540,
 			"y":-6244,
 			"width":308,
-			"height":80
+			"height":80,
+			"color":"1"
 		},
 		{
 			"id":"p5native_RESPONSE",
@@ -1511,7 +1515,8 @@
 			"x":22273,
 			"y":-3119,
 			"width":338,
-			"height":79
+			"height":79,
+			"color":"1"
 		},
 		{
 			"id":"p5native_RESULT",
@@ -1521,7 +1526,8 @@
 			"x":22267,
 			"y":-3360,
 			"width":350,
-			"height":79
+			"height":79,
+			"color":"1"
 		},
 		{
 			"id":"p5native_ROWS",
@@ -1531,7 +1537,8 @@
 			"x":22263,
 			"y":-3600,
 			"width":354,
-			"height":102
+			"height":102,
+			"color":"1"
 		},
 		{
 			"id":"p5native_QUERY",
@@ -1541,7 +1548,8 @@
 			"x":22264,
 			"y":-3800,
 			"width":356,
-			"height":62
+			"height":62,
+			"color":"1"
 		},
 		{
 			"id":"p5native_EXEC",
@@ -1551,7 +1559,8 @@
 			"x":22203,
 			"y":-4080,
 			"width":478,
-			"height":80
+			"height":80,
+			"color":"1"
 		},
 		{
 			"id":"p5native_MAIN",
@@ -1561,7 +1570,8 @@
 			"x":22384,
 			"y":-4300,
 			"width":346,
-			"height":82
+			"height":82,
+			"color":"1"
 		},
 		{
 			"id":"p5native_API",
@@ -1571,7 +1581,8 @@
 			"x":22344,
 			"y":-4480,
 			"width":427,
-			"height":82
+			"height":82,
+			"color":"1"
 		},
 		{
 			"id":"p5native_CONNECT_OK",
@@ -1581,7 +1592,8 @@
 			"x":23166,
 			"y":-4851,
 			"width":494,
-			"height":70
+			"height":70,
+			"color":"1"
 		},
 		{
 			"id":"p5native_CONNECT",
@@ -1591,7 +1603,8 @@
 			"x":23233,
 			"y":-5136,
 			"width":360,
-			"height":127
+			"height":127,
+			"color":"1"
 		},
 		{
 			"id":"p5native_SCRIPT",
@@ -1601,7 +1614,8 @@
 			"x":22431,
 			"y":-5860,
 			"width":338,
-			"height":80
+			"height":80,
+			"color":"1"
 		},
 		{
 			"id":"p5native_ALEMBIC",
@@ -1611,7 +1625,8 @@
 			"x":22422,
 			"y":-6244,
 			"width":356,
-			"height":80
+			"height":80,
+			"color":"1"
 		},
 		{
 			"id":"p5native_DBPY",
@@ -1621,7 +1636,8 @@
 			"x":22040,
 			"y":-6244,
 			"width":340,
-			"height":80
+			"height":80,
+			"color":"1"
 		},
 		{
 			"id":"p5native_DATA_CHECK",
@@ -1631,7 +1647,8 @@
 			"x":22458,
 			"y":-5136,
 			"width":284,
-			"height":60
+			"height":60,
+			"color":"1"
 		},
 		{
 			"id":"p5native_DATA_OK",
@@ -1641,7 +1658,8 @@
 			"x":22478,
 			"y":-4841,
 			"width":244,
-			"height":60
+			"height":60,
+			"color":"1"
 		},
 		{
 			"id":"p5native_BROWSER",
@@ -1651,7 +1669,8 @@
 			"x":22500,
 			"y":-4600,
 			"width":201,
-			"height":60
+			"height":60,
+			"color":"1"
 		},
 		{
 			"id":"aa218b882a8b2254",

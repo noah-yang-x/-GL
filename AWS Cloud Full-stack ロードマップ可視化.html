@@ -3943,7 +3943,8 @@ async function load(){
   for(const key of Object.keys(resources))delete resources[key];
   for(const n of canvas.nodes){
    if(n.type==='file'){
-    const r=await fetch(encodeURIComponent(n.file.split('/').pop()),{cache:'no-store'});
+    const file=n.file.endsWith('.png')?'IMG/'+n.file.split('/').pop():n.file;
+    const r=await fetch(file.split('/').map(encodeURIComponent).join('/'),{cache:'no-store'});
     if(!r.ok)throw new Error('File HTTP '+r.status+': '+n.file);
     resources[n.file]={kind:'markdown',text:await r.text()};
    }
