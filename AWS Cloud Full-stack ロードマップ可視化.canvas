@@ -2732,6 +2732,7 @@
 		{
 			"id":"python_core_overview_edge_1",
 			"styleAttributes":{"pathfindingMethod":"square"},
+			"awsLabelPosition":0.3257838057804681,
 			"fromNode":"python_core_overview_entry_request",
 			"fromSide":"bottom",
 			"toNode":"python_core_overview_python_request",
@@ -2759,6 +2760,7 @@
 		{
 			"id":"python_core_overview_edge_4",
 			"styleAttributes":{"pathfindingMethod":"square"},
+			"awsLabelPosition":0.8257838057804681,
 			"fromNode":"python_core_overview_python_response",
 			"fromSide":"top",
 			"toNode":"python_core_overview_entry_response",
