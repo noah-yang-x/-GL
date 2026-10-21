@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AWS Cloud Full-stack ロードマップ可視化</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:#191919;color:#ddd;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","PingFang SC",Arial,sans-serif}header{height:96px;padding:12px 18px;background:#222;border-bottom:1px solid #444;display:flex;flex-direction:column;gap:10px}h1{font-size:18px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}button,.file-button{font:inherit;font-size:14px;color:#eee;background:#303030;border:1px solid #555;border-radius:5px;padding:5px 11px;cursor:pointer}.hint{font-size:12px;color:#aaa}#viewport{width:100%;height:calc(100% - 96px);touch-action:none;cursor:grab;outline:none}#viewport.dragging{cursor:grabbing}svg{display:block;width:100%;height:100%;user-select:none}.node-body{width:100%;height:100%;padding:4px 10px;overflow:hidden;color:#e0e0e0;font-size:16px;line-height:1.4;user-select:text;overflow-wrap:anywhere}.node-body p{margin:0 0 8px}.node-body p:last-child{margin-bottom:0}.node-body h1,.node-body h2,.node-body h3{font-size:20px;line-height:1.3;margin:0 0 8px;white-space:normal}.node-body ul,.node-body ol{padding-left:22px;margin:5px 0}.node-body a{color:#8ec9ff}.node-body pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;background:#151515;padding:10px;border-radius:4px;user-select:text}.node-body code{font-size:.88em}.node-body img{display:block;width:100%;height:100%;object-fit:contain}.node-body:has(>p>img){padding:4px}.node-body:has(>p>img)>p{height:100%}.node-file-title{font-size:15px;color:#b1bdca;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #555}.group-label{fill:#ddd;font-size:20px;font-weight:600}.edge-label{fill:#ddd;font-size:18px}.embedded-mermaid{background:#f7f7f7;color:#222;padding:10px;margin:10px 0}.embedded-mermaid svg{width:100%;height:auto;user-select:text}#status{max-width:35vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#chooser{display:none}.vertical{writing-mode:vertical-rl;white-space:pre-wrap;padding:4px;line-height:1.3}.error{position:fixed;bottom:15px;left:15px;background:#66252d;padding:10px;border-radius:5px;max-width:80vw}@media(max-width:700px){header{height:132px}#viewport{height:calc(100% - 132px)}.hint{display:none}.controls{gap:5px}button,.file-button{padding:5px 7px;font-size:13px}}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:#191919;color:#ddd;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","PingFang SC",Arial,sans-serif}header{height:96px;padding:12px 18px;background:#222;border-bottom:1px solid #444;display:flex;flex-direction:column;gap:10px}h1{font-size:18px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}button,.file-button{font:inherit;font-size:14px;color:#eee;background:#303030;border:1px solid #555;border-radius:5px;padding:5px 11px;cursor:pointer}.hint{font-size:12px;color:#aaa}#viewport{width:100%;height:calc(100% - 96px);touch-action:none;cursor:grab;outline:none}#viewport.dragging{cursor:grabbing}svg{display:block;width:100%;height:100%;user-select:none}.node-body{width:100%;height:100%;padding:4px 10px;overflow:auto;color:#e0e0e0;font-size:16px;line-height:1.4;user-select:text;overflow-wrap:anywhere}.node-body p{margin:0 0 8px}.node-body p:last-child{margin-bottom:0}.node-body h1,.node-body h2,.node-body h3{font-size:20px;line-height:1.3;margin:0 0 8px;white-space:normal}.node-body ul,.node-body ol{padding-left:22px;margin:5px 0}.node-body a{color:#8ec9ff}.node-body pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;background:#151515;padding:10px;border-radius:4px;user-select:text}.node-body code{font-size:.88em}.node-body img{display:block;width:100%;height:100%;object-fit:contain}.node-body:has(>p>img){padding:4px}.node-body:has(>p>img)>p{height:100%}.node-file-title{font-size:15px;color:#b1bdca;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #555}.group-label{fill:#ddd;font-size:20px;font-weight:600}.edge-label{fill:#ddd;font-size:18px}.embedded-mermaid{background:#f7f7f7;color:#222;padding:10px;margin:10px 0}.embedded-mermaid svg{width:100%;height:auto;user-select:text}#status{max-width:35vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#chooser{display:none}.edge-note{font-size:14px;line-height:1.4;text-align:center;white-space:pre-wrap;overflow-wrap:anywhere;padding:2px 6px;background:#191919;color:#ddd;user-select:text}.error{position:fixed;bottom:15px;left:15px;background:#66252d;padding:10px;border-radius:5px;max-width:80vw}@media(max-width:700px){header{height:132px}#viewport{height:calc(100% - 132px)}.hint{display:none}.controls{gap:5px}button,.file-button{padding:5px 7px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -3812,7 +3812,7 @@ globalThis["mermaid"] = globalThis.__esbuild_esm_mermaid_nm["mermaid"].default;
 const data=JSON.parse(document.getElementById('canvas-data').textContent);
 const NS='http://www.w3.org/2000/svg';
 const svg=document.getElementById('drawing'),scene=document.getElementById('scene'),viewport=document.getElementById('viewport');
-const resources={},colors={'1':'#e76a6a','2':'#d99b5b','3':'#d5c56e','4':'#74b78a','5':'#6db9c9','6':'#a591d8'};
+const resources={},colors={'1':'#fb464c','2':'#e9973f','3':'#e0de71','4':'#44cf6e','5':'#53dfdd','6':'#a882ff'};
 let current={nodes:[],edges:[]},scale=1,tx=0,ty=0,drag=null,serial=0;
 window.canvasPreview={ready:false,errors:[]};
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
@@ -3848,39 +3848,437 @@ function zoom(factor,x=viewport.clientWidth/2,y=viewport.clientHeight/2){
  const next=Math.max(.07,Math.min(4,scale*factor)),ratio=next/scale;tx=x-(x-tx)*ratio;ty=y-(y-ty)*ratio;scale=next;transform();
 }
 const vector={top:{x:0,y:-1},bottom:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};
-function port(n,side){return {x:n.x+(side==='left'?0:side==='right'?n.width:n.width/2),y:n.y+(side==='top'?0:side==='bottom'?n.height:n.height/2)};}
+// Keep orthogonal routes consistent with the local Advanced Canvas renderer.
+var BBoxHelper=class {
+  static combineBBoxes(bboxes) {
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+    for (const bbox of bboxes) {
+      minX = Math.min(minX, bbox.minX);
+      minY = Math.min(minY, bbox.minY);
+      maxX = Math.max(maxX, bbox.maxX);
+      maxY = Math.max(maxY, bbox.maxY);
+    }
+    return { minX, minY, maxX, maxY };
+  }
+  static getCenterOfBBoxSide(bbox, side) {
+    switch (side) {
+      case "top":
+        return { x: (bbox.minX + bbox.maxX) / 2, y: bbox.minY };
+      case "right":
+        return { x: bbox.maxX, y: (bbox.minY + bbox.maxY) / 2 };
+      case "bottom":
+        return { x: (bbox.minX + bbox.maxX) / 2, y: bbox.maxY };
+      case "left":
+        return { x: bbox.minX, y: (bbox.minY + bbox.maxY) / 2 };
+    }
+  }
+  static getOppositeSide(side) {
+    switch (side) {
+      case "top":
+        return "bottom";
+      case "right":
+        return "left";
+      case "bottom":
+        return "top";
+      case "left":
+        return "right";
+    }
+  }
+  static isHorizontal(side) {
+    return side === "left" || side === "right";
+  }
+  static direction(side) {
+    return side === "right" || side === "bottom" ? 1 : -1;
+  }
+};
+const CanvasHelper={GRID_SIZE:20,alignToGrid(value,gridSize=20){return Math.round(value/gridSize)*gridSize;}};
+var SvgPathHelper=class {
+  static pathArrayToSvgPath(positions) {
+    for (let i = 0; i < positions.length - 2; i++) {
+      const p1 = positions[i];
+      const p2 = positions[i + 1];
+      const p3 = positions[i + 2];
+      const currentDirection = {
+        x: p2.x - p1.x,
+        y: p2.y - p1.y
+      };
+      const nextDirection = {
+        x: p3.x - p2.x,
+        y: p3.y - p2.y
+      };
+      if (currentDirection.x !== nextDirection.x && currentDirection.y !== nextDirection.y) continue;
+      positions.splice(i + 1, 1);
+      i--;
+    }
+    return positions.map(
+      (position, index) => `${index === 0 ? "M" : "L"} ${position.x} ${position.y}`
+    ).join(" ");
+  }
+  static pathArrayToRoundedSvgPath(pathArray, targetRadius) {
+    if (pathArray.length < 3)
+      return this.pathArrayToSvgPath(pathArray);
+    pathArray = pathArray.filter((position, index) => {
+      if (index === 0) return true;
+      const previous = pathArray[index - 1];
+      return !(position.x === previous.x && position.y === previous.y);
+    });
+    const commands = [];
+    commands.push(`M ${pathArray[0].x} ${pathArray[0].y}`);
+    for (let i = 1; i < pathArray.length - 1; i++) {
+      const previous = pathArray[i - 1];
+      const current = pathArray[i];
+      const next = pathArray[i + 1];
+      const prevDelta = { x: current.x - previous.x, y: current.y - previous.y };
+      const nextDelta = { x: next.x - current.x, y: next.y - current.y };
+      const prevLen = Math.sqrt(prevDelta.x * prevDelta.x + prevDelta.y * prevDelta.y);
+      const nextLen = Math.sqrt(nextDelta.x * nextDelta.x + nextDelta.y * nextDelta.y);
+      const prevUnit = prevLen ? { x: prevDelta.x / prevLen, y: prevDelta.y / prevLen } : { x: 0, y: 0 };
+      const nextUnit = nextLen ? { x: nextDelta.x / nextLen, y: nextDelta.y / nextLen } : { x: 0, y: 0 };
+      let dot = prevUnit.x * nextUnit.x + prevUnit.y * nextUnit.y;
+      dot = Math.max(-1, Math.min(1, dot));
+      const angle = Math.acos(dot);
+      if (angle < 0.01 || Math.abs(Math.PI - angle) < 0.01) {
+        commands.push(`L ${current.x} ${current.y}`);
+        continue;
+      }
+      const desiredOffset = targetRadius * Math.tan(angle / 2);
+      const d = Math.min(desiredOffset, prevLen / 2, nextLen / 2);
+      const effectiveRadius = d / Math.tan(angle / 2);
+      const firstAnchor = {
+        x: current.x - prevUnit.x * d,
+        y: current.y - prevUnit.y * d
+      };
+      const secondAnchor = {
+        x: current.x + nextUnit.x * d,
+        y: current.y + nextUnit.y * d
+      };
+      commands.push(`L ${firstAnchor.x} ${firstAnchor.y}`);
+      const cross = prevDelta.x * nextDelta.y - prevDelta.y * nextDelta.x;
+      const sweepFlag = cross < 0 ? 0 : 1;
+      commands.push(`A ${effectiveRadius} ${effectiveRadius} 0 0 ${sweepFlag} ${secondAnchor.x} ${secondAnchor.y}`);
+    }
+    const last = pathArray[pathArray.length - 1];
+    commands.push(`L ${last.x} ${last.y}`);
+    return commands.join(" ");
+  }
+};
+var EdgePathfindingMethod = class {
+  constructor(plugin, canvas, fromNodeBBox, fromPos, fromBBoxSidePos, fromSide, toNodeBBox, toPos, toBBoxSidePos, toSide) {
+    this.plugin = plugin;
+    this.canvas = canvas;
+    this.fromNodeBBox = fromNodeBBox;
+    this.fromPos = fromPos;
+    this.fromBBoxSidePos = fromBBoxSidePos;
+    this.fromSide = fromSide;
+    this.toNodeBBox = toNodeBBox;
+    this.toPos = toPos;
+    this.toBBoxSidePos = toBBoxSidePos;
+    this.toSide = toSide;
+  }
+};
+
+var ROUNDED_EDGE_RADIUS = 5;
+var EdgePathfindingSquare = class extends EdgePathfindingMethod {
+  getPath() {
+    const pathArray = [];
+    let center = {
+      x: (this.fromPos.x + this.toPos.x) / 2,
+      y: (this.fromPos.y + this.toPos.y) / 2
+    };
+    const idealCenter = BBoxHelper.isHorizontal(this.fromSide) ? {
+      x: this.toBBoxSidePos.x,
+      y: this.fromBBoxSidePos.y
+    } : {
+      x: this.fromBBoxSidePos.x,
+      y: this.toBBoxSidePos.y
+    };
+    const isPathCollidingAtFrom = this.fromSide === "top" && idealCenter.y > this.fromPos.y || this.fromSide === "bottom" && idealCenter.y < this.fromPos.y || this.fromSide === "left" && idealCenter.x > this.fromPos.x || this.fromSide === "right" && idealCenter.x < this.fromPos.x;
+    const isPathCollidingAtTo = this.toSide === "top" && idealCenter.y > this.toPos.y || this.toSide === "bottom" && idealCenter.y < this.toPos.y || this.toSide === "left" && idealCenter.x > this.toPos.x || this.toSide === "right" && idealCenter.x < this.toPos.x;
+    if (this.fromSide === this.toSide) {
+      const uPath = this.getUPath(this.fromPos, this.toPos, this.fromSide, this.toSide);
+      pathArray.push(...uPath.pathArray);
+      center = uPath.center;
+    } else if (BBoxHelper.isHorizontal(this.fromSide) === BBoxHelper.isHorizontal(this.toSide)) {
+      let zPath;
+      if (!isPathCollidingAtFrom || !isPathCollidingAtTo) {
+        zPath = this.getZPath(this.fromPos, this.toPos, this.fromSide, this.toSide);
+        pathArray.push(...zPath.pathArray);
+      } else {
+        const fromDirection = BBoxHelper.direction(this.fromSide);
+        const firstFromDetourPoint = BBoxHelper.isHorizontal(this.fromSide) ? {
+          x: CanvasHelper.alignToGrid(this.fromBBoxSidePos.x + fromDirection * CanvasHelper.GRID_SIZE),
+          y: this.fromBBoxSidePos.y
+        } : {
+          x: this.fromBBoxSidePos.x,
+          y: CanvasHelper.alignToGrid(this.fromBBoxSidePos.y + fromDirection * CanvasHelper.GRID_SIZE)
+        };
+        const toDirection = BBoxHelper.direction(this.toSide);
+        const firstToDetourPoint = BBoxHelper.isHorizontal(this.toSide) ? {
+          x: CanvasHelper.alignToGrid(this.toBBoxSidePos.x + toDirection * CanvasHelper.GRID_SIZE),
+          y: this.toBBoxSidePos.y
+        } : {
+          x: this.toBBoxSidePos.x,
+          y: CanvasHelper.alignToGrid(this.toBBoxSidePos.y + toDirection * CanvasHelper.GRID_SIZE)
+        };
+        const newFromSide = BBoxHelper.isHorizontal(this.fromSide) ? firstFromDetourPoint.y < this.fromPos.y ? "top" : "bottom" : firstFromDetourPoint.x < firstToDetourPoint.x ? "right" : "left";
+        zPath = this.getZPath(firstFromDetourPoint, firstToDetourPoint, newFromSide, BBoxHelper.getOppositeSide(newFromSide));
+        pathArray.push(this.fromPos);
+        pathArray.push(...zPath.pathArray);
+        pathArray.push(this.toPos);
+      }
+      center = zPath.center;
+    } else {
+      if (isPathCollidingAtFrom || isPathCollidingAtTo) {
+        if (isPathCollidingAtFrom && isPathCollidingAtTo) {
+          const direction = BBoxHelper.direction(this.fromSide);
+          let firstFromDetourPoint;
+          let secondFromDetourPoint;
+          if (BBoxHelper.isHorizontal(this.fromSide)) {
+            const combinedBBoxes = BBoxHelper.combineBBoxes([this.fromNodeBBox, this.toNodeBBox]);
+            firstFromDetourPoint = {
+              x: CanvasHelper.alignToGrid((direction > 0 ? combinedBBoxes.maxX : combinedBBoxes.minX) + direction * CanvasHelper.GRID_SIZE),
+              y: this.fromBBoxSidePos.y
+            };
+            secondFromDetourPoint = {
+              x: firstFromDetourPoint.x,
+              y: BBoxHelper.getCenterOfBBoxSide(this.fromNodeBBox, this.toSide).y
+            };
+          } else {
+            const combinedBBoxes = BBoxHelper.combineBBoxes([this.fromNodeBBox, this.toNodeBBox]);
+            firstFromDetourPoint = {
+              x: this.fromBBoxSidePos.x,
+              y: CanvasHelper.alignToGrid((direction > 0 ? combinedBBoxes.maxY : combinedBBoxes.minY) + direction * CanvasHelper.GRID_SIZE)
+            };
+            secondFromDetourPoint = {
+              x: BBoxHelper.getCenterOfBBoxSide(this.fromNodeBBox, this.toSide).x,
+              y: firstFromDetourPoint.y
+            };
+          }
+          const uPath = this.getUPath(secondFromDetourPoint, this.toPos, this.toSide, this.toSide);
+          pathArray.push(this.fromPos);
+          pathArray.push(firstFromDetourPoint);
+          pathArray.push(...uPath.pathArray);
+          center = pathArray[Math.floor(pathArray.length / 2)];
+        } else {
+          if (isPathCollidingAtFrom) {
+            const direction = BBoxHelper.direction(this.fromSide);
+            const firstFromDetourPoint = BBoxHelper.isHorizontal(this.fromSide) ? {
+              x: CanvasHelper.alignToGrid(this.fromBBoxSidePos.x + direction * CanvasHelper.GRID_SIZE),
+              y: this.fromBBoxSidePos.y
+            } : {
+              x: this.fromBBoxSidePos.x,
+              y: CanvasHelper.alignToGrid(this.fromBBoxSidePos.y + direction * CanvasHelper.GRID_SIZE)
+            };
+            const useUPath = BBoxHelper.isHorizontal(this.fromSide) ? this.toPos.y > BBoxHelper.getCenterOfBBoxSide(this.fromNodeBBox, BBoxHelper.getOppositeSide(this.toSide)).y === BBoxHelper.direction(this.toSide) > 0 : this.toPos.x > BBoxHelper.getCenterOfBBoxSide(this.fromNodeBBox, BBoxHelper.getOppositeSide(this.toSide)).x === BBoxHelper.direction(this.toSide) > 0;
+            const connectionSide = useUPath ? this.toSide : BBoxHelper.getOppositeSide(this.toSide);
+            const secondFromDetourPoint = BBoxHelper.isHorizontal(this.fromSide) ? {
+              x: firstFromDetourPoint.x,
+              y: BBoxHelper.getCenterOfBBoxSide(this.fromNodeBBox, connectionSide).y
+            } : {
+              x: BBoxHelper.getCenterOfBBoxSide(this.fromNodeBBox, connectionSide).x,
+              y: firstFromDetourPoint.y
+            };
+            const path = useUPath ? this.getUPath(secondFromDetourPoint, this.toPos, this.toSide, this.toSide) : this.getZPath(secondFromDetourPoint, this.toPos, this.toSide, this.toSide);
+            pathArray.push(this.fromPos);
+            pathArray.push(firstFromDetourPoint);
+            pathArray.push(...path.pathArray);
+            center = path.center;
+          }
+          if (isPathCollidingAtTo) {
+            const direction = BBoxHelper.direction(this.toSide);
+            const firstToDetourPoint = BBoxHelper.isHorizontal(this.toSide) ? {
+              x: CanvasHelper.alignToGrid(this.toBBoxSidePos.x + direction * CanvasHelper.GRID_SIZE),
+              y: this.toBBoxSidePos.y
+            } : {
+              x: this.toBBoxSidePos.x,
+              y: CanvasHelper.alignToGrid(this.toBBoxSidePos.y + direction * CanvasHelper.GRID_SIZE)
+            };
+            const useUPath = BBoxHelper.isHorizontal(this.toSide) ? this.fromPos.y > BBoxHelper.getCenterOfBBoxSide(this.toNodeBBox, BBoxHelper.getOppositeSide(this.fromSide)).y === BBoxHelper.direction(this.fromSide) > 0 : this.fromPos.x > BBoxHelper.getCenterOfBBoxSide(this.toNodeBBox, BBoxHelper.getOppositeSide(this.fromSide)).x === BBoxHelper.direction(this.fromSide) > 0;
+            const connectionSide = useUPath ? this.fromSide : BBoxHelper.getOppositeSide(this.fromSide);
+            const secondToDetourPoint = BBoxHelper.isHorizontal(this.toSide) ? {
+              x: firstToDetourPoint.x,
+              y: BBoxHelper.getCenterOfBBoxSide(this.toNodeBBox, connectionSide).y
+            } : {
+              x: BBoxHelper.getCenterOfBBoxSide(this.toNodeBBox, connectionSide).x,
+              y: firstToDetourPoint.y
+            };
+            const path = useUPath ? this.getUPath(this.fromPos, secondToDetourPoint, this.fromSide, this.fromSide) : this.getZPath(this.fromPos, secondToDetourPoint, this.fromSide, this.fromSide);
+            pathArray.push(...path.pathArray);
+            pathArray.push(secondToDetourPoint);
+            pathArray.push(firstToDetourPoint);
+            pathArray.push(this.toPos);
+            center = path.center;
+          }
+        }
+      } else {
+        pathArray.push(
+          this.fromPos,
+          idealCenter,
+          this.toPos
+        );
+        center = {
+          x: pathArray[1].x,
+          y: pathArray[1].y
+        };
+      }
+    }
+    const svgPath = this.plugin.settings.getSetting("edgeStyleSquarePathRounded") ? SvgPathHelper.pathArrayToRoundedSvgPath(pathArray, ROUNDED_EDGE_RADIUS) : SvgPathHelper.pathArrayToSvgPath(pathArray.map((point) => ({ ...point })));
+    return { svgPath, center, pathArray, rotateArrows: false };
+  }
+  getUPath(fromPos, toPos, fromSide, toSide) {
+    const direction = BBoxHelper.direction(fromSide);
+    if (BBoxHelper.isHorizontal(fromSide)) {
+      const xExtremum = direction > 0 ? Math.max(fromPos.x, toPos.x) : Math.min(fromPos.x, toPos.x);
+      const x = CanvasHelper.alignToGrid(xExtremum + direction * CanvasHelper.GRID_SIZE);
+      return {
+        pathArray: [
+          fromPos,
+          { x, y: fromPos.y },
+          { x, y: toPos.y },
+          toPos
+        ],
+        center: {
+          x,
+          y: (fromPos.y + toPos.y) / 2
+        }
+      };
+    } else {
+      const yExtremum = direction > 0 ? Math.max(fromPos.y, toPos.y) : Math.min(fromPos.y, toPos.y);
+      const y = CanvasHelper.alignToGrid(yExtremum + direction * CanvasHelper.GRID_SIZE);
+      return {
+        pathArray: [
+          fromPos,
+          { x: fromPos.x, y },
+          { x: toPos.x, y },
+          toPos
+        ],
+        center: {
+          x: (fromPos.x + toPos.x) / 2,
+          y
+        }
+      };
+    }
+  }
+  getZPath(fromPos, toPos, fromSide, toSide) {
+    if (BBoxHelper.isHorizontal(fromSide)) {
+      const midX = fromPos.x + (toPos.x - fromPos.x) / 2;
+      return {
+        pathArray: [
+          fromPos,
+          { x: midX, y: fromPos.y },
+          { x: midX, y: toPos.y },
+          toPos
+        ],
+        center: {
+          x: midX,
+          y: (fromPos.y + toPos.y) / 2
+        }
+      };
+    } else {
+      const midY = fromPos.y + (toPos.y - fromPos.y) / 2;
+      return {
+        pathArray: [
+          fromPos,
+          { x: fromPos.x, y: midY },
+          { x: toPos.x, y: midY },
+          toPos
+        ],
+        center: {
+          x: (fromPos.x + toPos.x) / 2,
+          y: midY
+        }
+      };
+    }
+  }
+};
+
+function awsOffsetSquarePath(base, offsets) {
+  const points = base.map((point) => ({ ...point }));
+  for (const item of offsets || []) {
+    const i = item.index;
+    if (!Number.isInteger(i) || i < 1 || i >= base.length - 2 || !Number.isFinite(item.offset)) continue;
+    const a = base[i], b = base[i + 1];
+    if (item.axis === "x" && a.x === b.x && a.y !== b.y || item.axis === "y" && a.y === b.y && a.x !== b.x) {
+      points[i][item.axis] = a[item.axis] + item.offset;
+      points[i + 1][item.axis] = b[item.axis] + item.offset;
+    }
+  }
+  return points;
+}
+function awsSquarePathCenter(points) {
+  const lengths = points.slice(1).map((p, i) => Math.abs(p.x - points[i].x) + Math.abs(p.y - points[i].y));
+  let remaining = lengths.reduce((sum, length) => sum + length, 0) / 2;
+  for (let i = 0; i < lengths.length; i++) {
+    if (lengths[i] && remaining <= lengths[i]) {
+      const ratio = remaining / lengths[i];
+      return { x: points[i].x + (points[i + 1].x - points[i].x) * ratio, y: points[i].y + (points[i + 1].y - points[i].y) * ratio };
+    }
+    remaining -= lengths[i];
+  }
+  return points[0];
+}
+
+function port(n,side,saved){
+ const ratio=saved?.side===side&&Number.isFinite(saved.ratio)&&saved.ratio>=0&&saved.ratio<=1?saved.ratio:.5;
+ return {x:n.x+(side==='left'?0:side==='right'?n.width:n.width*ratio),y:n.y+(side==='top'?0:side==='bottom'?n.height:n.height*ratio)};
+}
 function edge(e,map){
  const from=map.get(e.fromNode),to=map.get(e.toNode);if(!from||!to)return;
- const fs=e.fromSide||'right',ts=e.toSide||'left',a=port(from,fs),b=port(to,ts),v=vector[fs],w=vector[ts];
- const length=Math.min(240,Math.max(45,Math.hypot(b.x-a.x,b.y-a.y)*.35));
- let d,mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2};
+ const fs=e.fromSide||'right',ts=e.toSide||'left',a=port(from,fs,e.awsFromPort),b=port(to,ts,e.awsToPort),v=vector[fs],w=vector[ts];
+ const start={x:a.x+v.x*7,y:a.y+v.y*7},end={x:b.x+w.x*7,y:b.y+w.y*7};
+ const length=Math.min(150,Math.max(70,Math.hypot(end.x-start.x,end.y-start.y)/2));
+ let d,mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2},vertical;
  if(e.styleAttributes?.pathfindingMethod==='square'){
-  const horizontal=['left','right'].includes(fs)&&['left','right'].includes(ts);
-  if(horizontal){
-   let mx=fs===ts?(fs==='left'?Math.min(a.x,b.x)-70:Math.max(a.x,b.x)+70):(a.x+b.x)/2;
-   mx+=(e.awsSegmentOffsets||[]).filter(o=>o.axis==='x').reduce((sum,o)=>sum+o.offset,0);
-   d='M'+a.x+','+a.y+' H'+mx+' V'+b.y+' H'+b.x;mid={x:mx,y:(a.y+b.y)/2};
-  }else{const my=(a.y+b.y)/2;d='M'+a.x+','+a.y+' V'+my+' H'+b.x+' V'+b.y;mid={x:(a.x+b.x)/2,y:my};}
+  const bbox=n=>({minX:n.x,minY:n.y,maxX:n.x+n.width,maxY:n.y+n.height});
+  const route=new EdgePathfindingSquare({settings:{getSetting:()=>true}},null,bbox(from),e.fromEnd==='arrow'?start:a,a,fs,bbox(to),e.toEnd==='none'?b:end,b,ts).getPath();
+  const points=awsOffsetSquarePath(route.pathArray,e.awsSegmentOffsets);
+  d=SvgPathHelper.pathArrayToRoundedSvgPath(points,ROUNDED_EDGE_RADIUS);
+  mid=e.awsSegmentOffsets?.length?awsSquarePathCenter(points):route.center;
+  let closest=Infinity,longest=0;
+  for(let i=1;i<points.length;i++){
+   const p=points[i-1],q=points[i],dx=q.x-p.x,dy=q.y-p.y,size=dx*dx+dy*dy;if(!size)continue;
+   const t=Math.max(0,Math.min(1,((mid.x-p.x)*dx+(mid.y-p.y)*dy)/size));
+   const distance=(mid.x-p.x-t*dx)**2+(mid.y-p.y-t*dy)**2;
+   if(distance<closest-1e-6||Math.abs(distance-closest)<=1e-6&&size>longest){closest=distance;longest=size;vertical=Math.abs(dy)>Math.abs(dx);}
+  }
  }else{
-  const c1={x:a.x+v.x*length,y:a.y+v.y*length},c2={x:b.x+w.x*length,y:b.y+w.y*length};
-  d='M'+a.x+','+a.y+' C'+c1.x+','+c1.y+' '+c2.x+','+c2.y+' '+b.x+','+b.y;
-  mid={x:(a.x+3*c1.x+3*c2.x+b.x)/8,y:(a.y+3*c1.y+3*c2.y+b.y)/8};
+  const c1={x:start.x+v.x*length,y:start.y+v.y*length},c2={x:end.x+w.x*length,y:end.y+w.y*length};
+  d='M'+start.x+','+start.y+' C'+c1.x+','+c1.y+' '+c2.x+','+c2.y+' '+end.x+','+end.y;
+  if(e.fromEnd!=='arrow')d='M'+a.x+','+a.y+' L'+start.x+','+start.y+' '+d;
+  if(e.toEnd==='none')d+=' M'+end.x+','+end.y+' L'+b.x+','+b.y;
+  mid={x:(start.x+3*c1.x+3*c2.x+end.x)/8,y:(start.y+3*c1.y+3*c2.y+end.y)/8};
+  vertical=Math.abs(b.y-a.y+c2.y-c1.y)>Math.abs(b.x-a.x+c2.x-c1.x);
  }
- const group=element('g',{'data-edge':e.id}),stroke=color(e.color),id='arrow-'+(++serial);
- const defs=element('defs',{},group);
- const marker=element('marker',{id,viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:8,markerHeight:8,orient:'auto-start-reverse',markerUnits:'userSpaceOnUse'},defs);
- element('path',{d:'M0 0 L10 5 L0 10 z',fill:stroke},marker);
+ const group=element('g',{'data-edge':e.id}),stroke=color(e.color);
  const attrs={d,stroke,'stroke-width':2,fill:'none'};
- if(e.toEnd!=='none')attrs['marker-end']='url(#'+id+')';
- if(e.fromEnd==='arrow')attrs['marker-start']='url(#'+id+')';
- element('path',attrs,group);
- if(e.label?.trim()){
-  const lines=e.label.trim().split('\n'),measure=document.createElement('canvas').getContext('2d');measure.font='18px sans-serif';
-  const width=Math.max(...lines.map(l=>measure.measureText(l).width))+18,height=lines.length*25+8;
-  element('rect',{x:mid.x-width/2,y:mid.y-height/2,width,height,rx:4,fill:'#191919','fill-opacity':.94},group);
-  const text=element('text',{x:mid.x,y:mid.y-(lines.length-1)*12.5+6,'text-anchor':'middle',class:'edge-label'},group);
-  lines.forEach((line,i)=>{const t=element('tspan',{x:mid.x,dy:i?25:0},text);t.textContent=line;});
+ const arrow=(point,side)=>element('polygon',{points:'0,0 6.5,10.4 -6.5,10.4',fill:stroke,transform:'translate('+point.x+' '+point.y+') rotate('+({top:180,bottom:0,left:90,right:270}[side])+')'},group);
+ if(e.fromEnd==='arrow')arrow(a,fs);
+ if(e.toEnd!=='none')arrow(b,ts);
+ if(e.styleAttributes?.path==='dotted')attrs['stroke-dasharray']='2 6';
+ const path=element('path',attrs,group);
+ function label(text,side,width){
+  if(!text)return;
+  const foreign=element('foreignObject',{'data-label-side':side,width:width||10000,height:10000},group);
+  const body=document.createElementNS('http://www.w3.org/1999/xhtml','div');
+  body.className='edge-note';body.textContent=text;body.style.width=width?width+'px':'max-content';foreign.append(body);
+  const labelWidth=body.offsetWidth,height=body.offsetHeight;
+  let point=mid;
+  if(side==='center'&&Number.isFinite(e.awsLabelPosition)&&e.awsLabelPosition>=0&&e.awsLabelPosition<=1)point=path.getPointAtLength(path.getTotalLength()*e.awsLabelPosition);
+  let x=point.x-labelWidth/2,y=point.y-height/2;
+  if(side!=='center'){
+   if(vertical)x=side==='above'?point.x-labelWidth-8:point.x+8;
+   else y=side==='above'?point.y-height-8:point.y+8;
+  }
+  for(const [key,value]of Object.entries({x,y,width:labelWidth,height}))foreign.setAttribute(key,value);
  }
+ const position=e.styleAttributes?.labelPosition;
+ if(position==='both'&&((e.labelAbove??e.label??'')||(e.labelBelow??''))){
+  label(e.labelAbove??e.label??'','above',e.awsLabelWidthAbove);
+  label(e.labelBelow??'','below',e.awsLabelWidthBelow);
+ }else label(e.label||'',position==='above'||position==='below'?position:'center',e.awsLabelWidth);
 }
 async function node(n){
  const group=element('g',{'data-node':n.id}),stroke=color(n.color);
@@ -3900,9 +4298,9 @@ async function node(n){
  foreign.append(body);
  if(n.type==='text')body.innerHTML=markdown(n.text||'');
  else if(n.type==='file'){
-  const title=document.createElement('div');title.className='node-file-title';title.textContent=n.file;body.append(title);
+  if(resources[n.file]?.kind!=='image'){const title=document.createElement('div');title.className='node-file-title';title.textContent=n.file;body.append(title);}
   const resource=resources[n.file];
-  const content=document.createElement('div');content.innerHTML=resource?markdown(resource.text):'<a href="'+encodeURIComponent(n.file.split('/').pop())+'">'+esc(n.file)+'</a>';body.append(content);
+  const content=document.createElement('div');content.innerHTML=resource?.kind==='image'?'<img src="'+resource.url+'" alt="'+esc(n.file)+'">':resource?markdown(resource.text):'<a href="'+encodeURIComponent(n.file.split('/').pop())+'">'+esc(n.file)+'</a>';body.append(content);if(resource?.kind==='image'){body.style.padding='0';content.style.height='100%';}
   content.querySelectorAll('pre>code.language-mermaid').forEach(code=>{const div=document.createElement('div');div.className='embedded-mermaid';div.textContent=code.textContent;code.parentElement.replaceWith(div);});
  }else if(n.type==='link')body.innerHTML='<a href="'+esc(n.url)+'" target="_blank" rel="noopener noreferrer">'+esc(n.url)+'</a>';
 }
@@ -3930,6 +4328,8 @@ viewport.addEventListener('pointermove',e=>{if(!drag)return;tx=drag.tx+e.clientX
 function stop(){drag=null;viewport.classList.remove('dragging');}
 viewport.addEventListener('pointerup',stop);viewport.addEventListener('pointercancel',stop);
 viewport.addEventListener('wheel',e=>{
+ const body=e.target.closest('.node-body');
+ if(body&&(body.scrollHeight>body.clientHeight||body.scrollWidth>body.clientWidth))return;
  e.preventDefault();const r=viewport.getBoundingClientRect();zoom(Math.exp(-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top);
 },{passive:false});
 viewport.addEventListener('keydown',e=>{if(e.key==='+'||e.key==='=')zoom(1.25);if(e.key==='-')zoom(.8);});
@@ -3952,10 +4352,11 @@ async function load(){
     const file=n.file.endsWith('.png')?'IMG/'+n.file.split('/').pop():n.file;
     const r=await fetch(file.split('/').map(encodeURIComponent).join('/'),{cache:'no-store'});
     if(!r.ok)throw new Error('File HTTP '+r.status+': '+n.file);
-    resources[n.file]={kind:'markdown',text:await r.text()};
+    resources[n.file]=n.file.endsWith('.png')?{kind:'image',url:file.split('/').map(encodeURIComponent).join('/')}:{kind:'markdown',text:await r.text()};
    }
    for(const match of (n.text||'').matchAll(/!\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g)){
-    resources[match[1]]={kind:'image',url:match[1].split('/').map(encodeURIComponent).join('/')};
+    const file=match[1].includes('/')?match[1]:'IMG/'+match[1];
+    resources[match[1]]={kind:'image',url:file.split('/').map(encodeURIComponent).join('/')};
    }
   }
   await render(canvas,!!lastSource);lastSource=source;
