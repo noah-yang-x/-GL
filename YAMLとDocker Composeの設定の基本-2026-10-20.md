@@ -268,6 +268,8 @@ flowchart TB
         subgraph DISK["Mac のディスク（Disk）：<br/>最終的（さいしゅうてき）な物理（ぶつり）ストレージ（Storage）"]
             RAW["Docker Desktop の仮想（かそう）ディスク（Disk）ファイル（File）<br/>Linux 仮想（かそう）マシン（Machine）の<br/>File System のデータ（Data）を保存（ほぞん）"]
         end
+        FILE imageSelection@-->|使用（しよう）する Image を指定（してい）：image: postgres:17| IMAGE
+        imageSelection@{ curve: bumpY }
         COMPOSE ~~~ IMAGE
         COMPOSE -->|動作（どうさ）に必要（ひつよう）な<br/>設定（せってい）を渡す（わたす）| ENGINE
         VOL -.->|Database File は最終的（さいしゅうてき）に<br/>この File の領域（りょういき）を使う（つかう）| RAW
